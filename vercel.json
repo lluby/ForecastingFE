@@ -1,16 +1,18 @@
 {
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "outputDirectory": "build"
-        }
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "outputDirectory": "dist"  // Ganti jika output Anda di folder lain, misalnya 'dist'
       }
-    ],
+    }
+  ],
 
-    "rewrites": [
+  "rewrites": [
       {"source": "/(.*", "destination": "/"}
     ]
+
   }
   
