@@ -4,7 +4,7 @@
         "src": "package.json",
         "use": "@vercel/static-build",
         "config": {
-          "outputDirectory": "build"  // Pastikan ini sesuai dengan folder output build Anda
+          "outputDirectory": "dist"
         }
       }
     ]
