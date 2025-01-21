@@ -49,7 +49,7 @@ export const MONTHS = [
     },
   ];
 
-  export const ALPHA_DEFAULT = 0.8;
+  export const ALPHA_DEFAULT = 0.66;
 
   export const NAME_DEFAULT = "Kulit Sapi";
   
