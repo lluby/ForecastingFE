@@ -17,7 +17,7 @@ const UserHistory = () => {
       }
 
       try {
-        const response = await fetch("http://localhost:3000/api/history", {
+        const response = await fetch("https://be-peramalan.vercel.app/api/history", {
           headers: {
             "Authorization": `Bearer ${token}`,
           },

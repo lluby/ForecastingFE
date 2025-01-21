@@ -11,7 +11,7 @@ const InventoryDelete = ({ open, onCancel, itemId, fetchData }) => {
 
     try {
       // Gunakan URL yang benar
-      const response = await fetch(`http://localhost:3000/api/bahan-baku/${itemId}`, {
+      const response = await fetch("https://be-peramalan.vercel.app/api/bahan-baku/${itemId}", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json", // Tambahkan jika backend memerlukannya

@@ -10,7 +10,7 @@ const LoginForm = () => {
 
     try {
       // Kirim permintaan login ke backend
-      const response = await axios.post("http://localhost:3000/api/auth/login", {
+      const response = await axios.post("https://be-peramalan.vercel.app/api/auth/login", {
         username,
         password,
       });

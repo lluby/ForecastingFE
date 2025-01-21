@@ -39,7 +39,7 @@ const InventoryEdit = ({ open, onCancel, initialData, onEditSuccess, fetchData }
     const token = localStorage.getItem("token"); // Pastikan token tersimpan di localStorage
 
     try {
-      const response = await fetch(`http://localhost:3000/api/bahan-baku/${initialData.id}`, {
+      const response = await fetch(`https://be-peramalan.vercel.app/api/bahan-baku/${initialData.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

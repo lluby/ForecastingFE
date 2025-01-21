@@ -19,7 +19,7 @@ const InventoryAdd = ({ open, onCancel, fetchData }) => {
     const token = localStorage.getItem("token"); // Pastikan token tersimpan di localStorage
 
     try {
-      const response = await fetch("http://localhost:3000/api/bahan-baku", {
+      const response = await fetch("https://be-peramalan.vercel.app/api/bahan-baku", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

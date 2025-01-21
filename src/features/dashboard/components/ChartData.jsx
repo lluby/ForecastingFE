@@ -31,7 +31,7 @@ const ChartData = () => {
           throw new Error("Token tidak ditemukan");
         }
   
-        const response = await fetch("http://localhost:3000/api/forecast", {
+        const response = await fetch("https://be-peramalan.vercel.app/api/forecast", {
           method: "GET", // Pastikan metode sesuai dengan API
           headers: {
             "Content-Type": "application/json",

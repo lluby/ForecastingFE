@@ -16,7 +16,7 @@ const UserDelete = ({ open, onCancel, itemId, fetchData }) => {
       }
 
       // Gunakan URL yang sesuai untuk API penghapusan pengguna
-      const response = await fetch(`http://localhost:3000/api/user/${itemId}`, {
+      const response = await fetch(`https://be-peramalan.vercel.app/api/user/${itemId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json", // Jika backend memerlukannya

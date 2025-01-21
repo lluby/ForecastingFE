@@ -12,7 +12,7 @@ const ManageInventory = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/bahan-baku");
+      const response = await fetch("https://be-peramalan.vercel.app/api/bahan-baku");
       const result = await response.json();
       setData(result); // Menyimpan data yang diterima ke dalam state 'data'
     } catch (error) {
