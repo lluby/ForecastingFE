@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: 'public', // Output directory untuk build
+    outDir: 'build', // Ubah ke "build" jika ingin output di folder "build"
   },
 })
