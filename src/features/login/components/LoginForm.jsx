@@ -14,6 +14,7 @@ const LoginForm = () => {
         username,
         password,
       });
+      console.log(response)
 
       // Ambil token dan role dari respons
       const { token, role } = response.data;

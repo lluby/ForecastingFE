@@ -19,7 +19,7 @@ const UserAdd = ({ open, onCancel, fetchData }) => {
         return;
       }
 
-      const response = await fetch("https://be-peramalan.vercel.app/api/user", {
+      const response = await fetch("https://be-peramalan.vercel.app/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
