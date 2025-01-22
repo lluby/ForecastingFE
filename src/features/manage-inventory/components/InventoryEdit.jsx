@@ -21,12 +21,11 @@ const InventoryEdit = ({ open, onCancel, initialData, onEditSuccess, fetchData }
   const [form] = Form.useForm();
 
   useEffect(() => {
-    if (open && initialData) {
+    if (open) {
       form.setFieldsValue({
-        name: initialData.name,
-        quantity: Number(initialData.quantity),
-        alpha: initialData.alpha,
-        month: initialData.month,
+        name: "Kulit Sapi", // Default value
+        alpha: 0.8,         // Default value
+        ...initialData,     // Other initial data
       });
     }
   }, [open, initialData, form]);
@@ -85,8 +84,9 @@ const InventoryEdit = ({ open, onCancel, initialData, onEditSuccess, fetchData }
         <Form.Item
           label="Nama Kulit"
           name="name"
-          rules={[{ required: true, message: "Nama kulit wajib diisi!" }]}>
-          <Input size="large" placeholder="Masukkan nama kulit" />
+          rules={[{ required: true, message: "Nama kulit wajib diisi!" }]}
+        >
+          <Input size="large" disabled placeholder="Kulit Sapi" />
         </Form.Item>
 
         <div className="flex justify-between gap-4">
@@ -103,7 +103,7 @@ const InventoryEdit = ({ open, onCancel, initialData, onEditSuccess, fetchData }
             name="alpha"
             rules={[{ required: true, message: "Nilai Alpha wajib diisi!" }]}
             className="w-full">
-            <Input type="number" step="0.01" size="large" placeholder="Nilai Alpha" />
+            <Input type="number" step="0.01" size="large" disabled placeholder="0.8" />
           </Form.Item>
 
           <Form.Item
