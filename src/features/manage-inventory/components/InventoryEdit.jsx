@@ -35,15 +35,14 @@ const InventoryEdit = ({ open, onCancel, initialData, onEditSuccess, fetchData }
     const payload = { ...values, quantity: Number(values.quantity) };
     console.log("Form Values yang Dikirim:", payload);
 
-    // Mendapatkan token dari localStorage
-    const token = localStorage.getItem("token"); // Pastikan token tersimpan di localStorage
+    const token = localStorage.getItem("token"); 
 
     try {
       const response = await fetch(`https://be-peramalan.vercel.app/api/bahan-baku/${initialData.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // Menambahkan token ke header
+          Authorization: `Bearer ${token}`, 
         },
         body: JSON.stringify(payload),
       });

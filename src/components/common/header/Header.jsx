@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const Header = ({ title = "" }) => {
   const navigate = useNavigate();
-  const role = localStorage.getItem('role'); // Ambil role dari localStorage
-  const username = localStorage.getItem('username'); // Ambil username jika ada di localStorage
+  const role = localStorage.getItem('role'); 
+  const username = localStorage.getItem('username'); 
 
   const handleLogout = () => {
     message.success("Successfully logout");

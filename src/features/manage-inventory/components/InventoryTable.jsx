@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { Table } from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
-import InventoryEdit from "./InventoryEdit"; // Impor modal edit
-import InventoryDelete from "./InventoryDelete"; // Impor modal delete
+import InventoryEdit from "./InventoryEdit"; 
+import InventoryDelete from "./InventoryDelete"; 
 
 const InventoryTable = ({data, fetchData}) => {
   const [showEditModal, setShowEditModal] = useState(false);
@@ -30,7 +30,7 @@ const InventoryTable = ({data, fetchData}) => {
     },
     {
       title: "Nilai Alpha",
-      dataIndex: "alpha", // Gunakan key yang benar dari API
+      dataIndex: "alpha", // Key sesuai dari API
       key: "alpha",
     },
     {
@@ -62,20 +62,17 @@ const InventoryTable = ({data, fetchData}) => {
     },
   ];
 
-  // Handle klik tombol Edit
   const handleEdit = (record) => {
-    setEditData(record); // Set data yang akan diedit
-    setShowEditModal(true); // Tampilkan modal edit
+    setEditData(record); 
+    setShowEditModal(true); 
   };
 
-  // Handle klik tombol Delete
   const handleDelete = (id) => {
-    setCurrentItemId(id); // Set ID item yang akan dihapus
-    setShowDeleteModal(true); // Tampilkan modal delete
+    setCurrentItemId(id); 
+    setShowDeleteModal(true); 
   };
 
 
-  // Handle pembatalan modal edit dan delete
   const handleCancelEdit = () => setShowEditModal(false);
   const handleCancelDelete = () => setShowDeleteModal(false);
 

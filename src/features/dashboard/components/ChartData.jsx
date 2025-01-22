@@ -19,30 +19,27 @@ const ChartData = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Mengambil data peramalan dari API
   useEffect(() => {
     const fetchForecastData = async () => {
       try {
-        // Mengambil token dari localStorage
         const token = localStorage.getItem("token");
   
-        // Jika token tidak ada, tampilkan pesan atau tangani sesuai kebutuhan
         if (!token) {
           throw new Error("Token tidak ditemukan");
         }
   
         const response = await fetch("https://be-peramalan.vercel.app/api/forecast", {
-          method: "GET", // Pastikan metode sesuai dengan API
+          method: "GET", 
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`, // Menambahkan token di header
+            Authorization: `Bearer ${token}`, 
           },
         });
   
         if (response.ok) {
           const data = await response.json();
-          setForecastData(data.forecast); // Menyimpan data peramalan yang diterima dari API
-          setBulanData(data.bulan); // Menyimpan data bulan yang diterima dari API
+          setForecastData(data.forecast); 
+          setBulanData(data.bulan); 
         } else {
           throw new Error("Error fetching forecast data");
         }
@@ -50,30 +47,27 @@ const ChartData = () => {
         console.error("Error fetching data:", error);
         setError("Terjadi kesalahan dalam mengambil data peramalan.");
       } finally {
-        setLoading(false); // Selesai memuat data
+        setLoading(false);
       }
     };
   
     fetchForecastData();
-  }, []); // Efek ini dijalankan sekali setelah komponen pertama kali di-render
+  }, []); 
   
-  // Menampilkan loader jika data sedang dimuat
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  // Menampilkan error jika ada kesalahan saat fetching data
   if (error) {
     return <div>{error}</div>;
   }
 
-  // Data untuk chart (menggunakan data peramalan yang diterima dari API)
   const data = {
-    labels: bulanData,  // Label bulan yang diterima dari API
+    labels: bulanData,  
     datasets: [
       {
         label: "Data Forecasting",
-        data: forecastData,  // Data peramalan dari API
+        data: forecastData,  
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(255, 159, 64, 0.2)",

@@ -7,7 +7,7 @@ const InventoryAdd = ({ open, onCancel, fetchData }) => {
   const onFinish = async (values) => {
     console.log("Success:", values);
 
-    // Parsing nilai alpha ke float untuk memastikan validasi
+    
     const data = {
       name: NAME_DEFAULT,
       quantity: parseFloat(values.jumlah),
@@ -15,15 +15,15 @@ const InventoryAdd = ({ open, onCancel, fetchData }) => {
       month: values.bulan,
     };
 
-    // Mendapatkan token dari localStorage
-    const token = localStorage.getItem("token"); // Pastikan token tersimpan di localStorage
+    
+    const token = localStorage.getItem("token"); 
 
     try {
       const response = await fetch("https://be-peramalan.vercel.app/api/bahan-baku", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // Menambahkan token ke header
+          Authorization: `Bearer ${token}`, 
         },
         body: JSON.stringify(data),
       });
@@ -85,7 +85,6 @@ const InventoryAdd = ({ open, onCancel, fetchData }) => {
                 <Input type="number" size="large" placeholder="Jumlah" />
               </Form.Item>
 
-              {/* Field nilai alpha menjadi tidak dapat diedit */}
               <Form.Item
                 label="Nilai Alpha"
                 name="nilai_alpha"
@@ -94,8 +93,8 @@ const InventoryAdd = ({ open, onCancel, fetchData }) => {
                 <Input
                   type="number"
                   size="large"
-                  value={ALPHA_DEFAULT} // Menampilkan nilai alpha tetap
-                  disabled // Menonaktifkan input untuk nilai alpha
+                  value={ALPHA_DEFAULT} 
+                  disabled 
                 />
               </Form.Item>
 

@@ -8,23 +8,22 @@ import { message } from "antd";
 const ManageInventory = () => {
   const [showModal, setShowModal] = useState(false);
 
-  const [data, setData] = useState([]); // Menyimpan data yang ditarik dari API
+  const [data, setData] = useState([]); 
 
   const fetchData = async () => {
     try {
       const response = await fetch("https://be-peramalan.vercel.app/api/bahan-baku");
       const result = await response.json();
-      setData(result); // Menyimpan data yang diterima ke dalam state 'data'
+      setData(result); 
     } catch (error) {
       console.log(error);
       message.error("Terjadi kesalahan saat mengambil data.");
     }
   };
 
-  // Mengambil data bahan baku dari API saat komponen pertama kali di-render
   useEffect(() => {
     fetchData();
-  }, []); // Hanya dijalankan sekali saat pertama kali render
+  }, []); 
 
 
   const handleShowModal = () => {

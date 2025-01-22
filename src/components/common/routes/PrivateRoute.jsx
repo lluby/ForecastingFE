@@ -8,9 +8,8 @@ import ManageAccount from "../../../features/setting/ManageAccount";
 
 const PrivateRoute = () => {
   const token = localStorage.getItem('token');
-  const userRole = localStorage.getItem('role'); // Pastikan 'role' diset dengan benar setelah login
+  const userRole = localStorage.getItem('role'); 
 
-  // Jika tidak ada token, arahkan ke login
   if (!token) {
     return <Navigate to="/login" replace />;
   }

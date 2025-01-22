@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Table } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
-import UserDelete from "./UserDelete"; // Impor modal delete
+import UserDelete from "./UserDelete"; 
 
 const UserTable = ({ data, fetchData }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -45,7 +45,6 @@ const UserTable = ({ data, fetchData }) => {
       ),
     },
   ];
-
 
   // Handle klik tombol Delete
   const handleDelete = (id) => {

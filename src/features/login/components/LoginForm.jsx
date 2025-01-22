@@ -9,31 +9,25 @@ const LoginForm = () => {
     const { username, password } = values;
 
     try {
-      // Kirim permintaan login ke backend
       const response = await axios.post("https://be-peramalan.vercel.app/api/auth/login", {
         username,
         password,
       });
       console.log(response)
 
-      // Ambil token dan role dari respons
       const { token, role } = response.data;
 
-      // Simpan token dan role ke localStorage
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
 
-      // Tampilkan notifikasi sukses
       notification.success({
         message: "Login Berhasil!",
         description: `Selamat datang kembali, ${role}!`,
         duration: 5,
       });
 
-      // Navigasi ke dashboard
       navigate("/dashboard", { replace: true });
     } catch (error) {
-      // Tampilkan notifikasi error
       notification.error({
         message: "Login Gagal!",
         description: error.response?.data?.message || "Username atau password salah.",
