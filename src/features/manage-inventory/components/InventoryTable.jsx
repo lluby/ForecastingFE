@@ -63,11 +63,13 @@ const InventoryTable = ({data, fetchData}) => {
   ];
 
   const handleEdit = (record) => {
+    console.log({ record })
     setEditData(record); 
     setShowEditModal(true); 
   };
 
   const handleDelete = (id) => {
+    console.log(id);
     setCurrentItemId(id); 
     setShowDeleteModal(true); 
   };
